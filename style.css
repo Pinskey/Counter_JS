@@ -1,0 +1,57 @@
+
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    font-size: 50px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    border-color: rgba(131, 131, 131, 0.76);;
+    font-size: 3rem;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+    line-height: 0;
+    column-span: 1;
+}
+
+.add{
+    color: rgba(131, 131, 131, 0.76);;
+    background-color: white;
+}
+
+.sub{
+    color: rgba(50, 50, 50, 0.5);
+    background-color: white;
+}
+
+.btn:hover{
+    color:  black;
+    border-color: black;
+}
+
+.minus{
+    transform: translateY(-3px);
+}
