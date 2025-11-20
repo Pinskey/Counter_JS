@@ -1,6 +1,3 @@
-
-
-
 /* Stile body */
 body {
     display: flex;
@@ -12,15 +9,39 @@ body {
 }
 
 /* Stile contatore centrale */
+.d_counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t_counter{
+    font-size: 40px;
+}
+
 .counter{
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid 3px;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 280px;
     border-radius: 50%;
     font-size: 100px;
+}
+
+/* Stile div sottrazione numero */
+.d_sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stile div sottrazione numero */
+.d_add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Stile pulsanti */
@@ -29,24 +50,27 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border-color: black;
     font-size: 50px;
     cursor: pointer;
     width: 80px;
     height: 80px;
 }
 
-.btn:hover{
-    color:  rgba(131, 131, 131, 0.76);
-    border-color: rgba(131, 131, 131, 0.76);
-}
-
 .add, .sub{
-    color: black;
     background-color: white;
 }
 
+.sub:hover{
+    color: red;
+    border-color: red;
+}
+
+.add:hover{
+    color:  green;
+    border-color: green;
+}
+
 /* Si trasla il simbolo '-' per allinearlo al '+' */
-.minus{
+.d_minus{
     transform: translateY(-3px);
 }
