@@ -1,14 +1,27 @@
+
+
+const themeBtn = document.createElement('button');
+themeBtn.className = 'btn-theme';
+const iconSun = document.createElement('img');
+iconSun.className = "light-mode";
+iconSun.src = 'light_filled.svg';
+const iconMoon = document.createElement('img');
+iconMoon.className = "dark-mode";
+iconMoon.src = 'dark_filled.svg';
+themeBtn.appendChild(iconMoon);
+document.body.appendChild(themeBtn);
+
 /* DIV Sottrai */
 /* Si crea il div che conterrà titolo e pulsante per la sottrazione */
 const divSub = document.createElement('div');
 /* Si assegna una classe a tale div */
-divSub.className = 'd_sub';
+divSub.className = 'div-sub';
 
 /* TITOLO 'Sottrai 1' */
 /* Si crea un titolo per identificare lo scopo del pulsante */
 const titleSub = document.createElement('h2');
 /* Si assegna una classe e il testo al titolo */
-titleSub.className = 'title_sub';
+titleSub.className = 'title-sub';
 titleSub.textContent = 'Sottrai 1';
 /* Si aggiunge il Titolo al div */
 divSub.appendChild(titleSub);
@@ -21,7 +34,7 @@ const btnSub = document.createElement('button');
 const divMinus = document.createElement('div');
 /* Si va ad assegnare una classe al pulsante e al div */
 btnSub.className = 'btn sub';
-divMinus.className = 'd_minus';
+divMinus.className = 'div-minus';
 /* Si assegna il simbolo '-' al div come testo */
 divMinus.textContent = '-';
 /* Si aggiungono i vari elementi creati alla pagina */
@@ -36,19 +49,19 @@ document.body.append(divSub);
 
 
 /* CONTATORE */
-/* Si crea il div che conterrà titolo e pulsante per aggiungere */
+/* Si crea il div che conterrà titolo e numero del contatore */
 const divCounter = document.createElement('div');
 /* Si assegna una classe a tale div */
-divCounter.className = 'd_counter';
+divCounter.className = 'div-counter';
 /* Si crea titolo per identificare il Contatore  */
 const titleCounter = document.createElement('h1');
 /* Si assegna una classe ed un testo al titolo */
-titleCounter.className = 't_counter';
+titleCounter.className = 'title-counter';
 titleCounter.textContent = 'Contatore';
 /* Si crea il counter inizializzato a 0 */
 const counter = document.createElement('div');
 /* Si va ad assegnare una classe al div e si assegna un testo di default */
-counter.className = 'counter';
+counter.className = 'num-counter';
 counter.textContent = '0'
 /* Si aggiungono i vari elementi creati alla pagina */
 document.body.appendChild(divCounter);
@@ -60,13 +73,13 @@ divCounter.appendChild(counter);
 /* Si crea il div che conterrà titolo e pulsante per aggiungere */
 const divAdd = document.createElement('div');
 /* Si assegna una classe a tale div */
-divAdd.className = 'd_add';
+divAdd.className = 'div-add';
 
 /* TITOLO 'Aggiungi 1' */
 /* Si crea un titolo per identificare lo scopo del pulsante */
 const titleAdd = document.createElement('h2');
 /* Si assegna una classe e il testo al titolo */
-titleAdd.className = 'title_add';
+titleAdd.className = 'title-add';
 titleAdd.textContent = 'Aggiungi 1';
 /* Si aggiunge il Titolo al div */
 divAdd.appendChild(titleAdd);
@@ -79,7 +92,7 @@ const btnAdd = document.createElement('button');
 const divPlus = document.createElement('div');
 /* Si va ad assegnare una classe al pulsante e al div */
 btnAdd.className = 'btn add';
-divPlus.className = 'd_plus'
+divPlus.className = 'div-plus'
 /* Si assegna simbolo '+' al div come testo */
 divPlus.textContent = '+';
 /* Si aggiungono i vari elementi creati alla pagina */
@@ -111,3 +124,17 @@ btnSub.addEventListener('click', ()=>{
     }
 })
 
+themeBtn.addEventListener('click',()=>{
+    const themeAttribute = document.documentElement.getAttribute('data-theme');
+    if(themeAttribute === 'dark'){
+        document.documentElement.removeAttribute('data-theme');
+        
+        themeBtn.removeChild(iconSun);
+        themeBtn.appendChild(iconMoon);
+    }else{
+        document.documentElement.setAttribute('data-theme', 'dark');
+
+        themeBtn.removeChild(iconMoon);
+        themeBtn.appendChild(iconSun);
+    }
+})

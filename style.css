@@ -1,3 +1,19 @@
+/* Si inizializzano le variabili per modalità giorno e notte */
+/* Modalità giorno sarà quella di default */
+:root{
+    --bg_color: white;
+    --txt_color: black;
+    --rotation: 0deg;
+    --f-size: 28px;
+}
+
+[data-theme = 'dark']{
+    --bg_color: black;
+    --txt_color: white;
+    --rotation: 0deg;
+    --f-size: 25px;
+}
+
 /* Stile body */
 body {
     display: flex;
@@ -5,21 +21,48 @@ body {
     justify-content: space-evenly;
     align-items: center;
     height: 100vh;
+    background-color: var(--bg_color);
+    color: var(--txt_color);
+}
+/* Stile div-theme */
+.btn-theme{
+    height: 40px;
+    width: 40px;
+    rotate: calc(var(--rotation));
+    position: absolute;
+    border: solid 2px;
+    border-radius: 50%;
+    text-align: center;
+    top: 25px;
+    right: 30px;
+    font-size: var(--f-size);
+    color: var(--txt_color);
+    background-color: var(--bg_color);
+    cursor: pointer;
+    /* Per aggiungere ombra al bottone */
+/*     box-shadow: 3px 3px  rgb(100, 100, 100); */
+}
+.btn-theme:hover{
 
 }
-
+.d-magg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
 /* Stile contatore centrale */
-.d_counter{
+.div-counter{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.t_counter{
+.title-counter{
     font-size: 40px;
 }
 
-.counter{
+.num-counter{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +74,14 @@ body {
 }
 
 /* Stile div sottrazione numero */
-.d_sub{
+.div-sub{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Stile div sottrazione numero */
-.d_add{
+/* Stile div aggiunta numero */
+.div-add{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,20 +92,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid;
     border-radius: 50%;
     font-size: 50px;
     cursor: pointer;
     width: 80px;
     height: 80px;
+    color: var(--txt_color);
+    background-color: var(--bg_color);
 }
 
-.add, .sub{
-    background-color: white;
-}
 
 .sub:hover{
-    color: red;
-    border-color: red;
+    color:rgba(255, 0, 0, 0.8);
+    border-color: rgba(255, 0, 0, 0.8);
 }
 
 .add:hover{
@@ -71,6 +114,15 @@ body {
 }
 
 /* Si trasla il simbolo '-' per allinearlo al '+' */
-.d_minus{
+.div-minus{
     transform: translateY(-3px);
+}
+
+
+.dark-mode{
+    transform: translateY(2px);
+}
+.light-mode{
+    color: white;
+    transform: translateY(3px);
 }
